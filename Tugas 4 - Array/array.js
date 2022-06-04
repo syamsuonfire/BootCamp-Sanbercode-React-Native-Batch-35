@@ -141,3 +141,57 @@ console.log(balikKata("racecar")); // racecar
 console.log(balikKata("I am Sanbers")); // srebnaS ma I
 
 // Soal No. 6 (Metode Array)
+var input = [
+    "0001",
+    "Roman Alamsyah ",
+    "Bandar Lampung",
+    "21/05/1989",
+    "Membaca",
+];
+
+function dataHandling2(textInput) {
+    var addData = textInput.splice(4, 1, "Pria", "SMA Internasional Metro");
+    var addName = textInput.splice(1, 1, "Roman Alamsyah Elsharawy");
+    var addProvince = textInput.splice(2, 1, "Provinsi Bandar Lampung");
+    console.log(textInput);
+
+    var splitDate = textInput.splice(3, 1);
+    var date = splitDate.toString().split("/");
+    var month = date[1];
+
+    switch (month) {
+        case "01": {
+            console.log("Januari");
+            break;
+        }
+        case "02": {
+            console.log("Februari");
+            break;
+        }
+        case "03": {
+            console.log("Maret");
+            break;
+        }
+        case "04": {
+            console.log("April");
+            break;
+        }
+        case "05": {
+            console.log("Mei");
+            break;
+        }
+    }
+
+    var sortDate = date.sort(function (a, b) {
+        return b - a;
+    });
+    console.log(sortDate);
+
+    var formattedDate = splitDate.toString().split("/").join("-");
+    console.log(formattedDate);
+
+    var name = textInput[1].toString().slice(0, 15);
+    console.log(name);
+}
+
+dataHandling2(input);
